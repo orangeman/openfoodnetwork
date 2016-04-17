@@ -80,5 +80,6 @@ angular.module('admin.orderCycles')
     $scope.removeDistributionOfVariant = (variant_id) ->
       OrderCycle.removeDistributionOfVariant(variant_id)
 
-    $scope.submit = (destination) ->
+    $scope.submit = ($event, destination) ->
+      $event.preventDefault()
       OrderCycle.update(destination)
