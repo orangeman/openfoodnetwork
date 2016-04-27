@@ -26,6 +26,7 @@
               %discount-order{ bo: { if: "rule.type == 'TagRule::DiscountOrder'" } }
               %filter-shipping-methods{ bo: { if: "rule.type == 'TagRule::FilterShippingMethods'" } }
               %filter-products{ bo: { if: "rule.type == 'TagRule::FilterProducts'" } }
+              %filter-payment-methods{ bo: { if: "rule.type == 'TagRule::FilterPaymentMethods'" } }
             %td.actions
               %a{ ng: { click: "deleteTagRule(tagGroup, rule)" }, :class => "delete-tag-rule icon-trash no-text" }
         .add_rule.text-center
