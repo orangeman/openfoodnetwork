@@ -42,6 +42,41 @@ module Spree
       end
     end
 
+    describe "capping quantity at stock level" do
+      let!(:v) { create(:variant, on_demand: false, on_hand: 10) }
+      let!(:li) { create(:line_item, variant: v, quantity: 10, max_quantity: 10) }
+
+      before do
+        v.update_attributes! on_hand: 5
+      end
+
+      it "caps quantity" do
+        li.cap_quantity_at_stock!
+        li.reload.quantity.should == 5
+      end
+
+      it "does not cap max_quantity" do
+        li.cap_quantity_at_stock!
+        li.reload.max_quantity.should == 10
+      end
+
+      it "works for products without max_quantity" do
+        li.update_column :max_quantity, nil
+        li.cap_quantity_at_stock!
+        li.reload
+        li.quantity.should == 5
+        li.max_quantity.should be_nil
+      end
+
+      it "does nothing for on_demand items" do
+        v.update_attributes! on_demand: true
+        li.cap_quantity_at_stock!
+        li.reload
+        li.quantity.should == 10
+        li.max_quantity.should == 10
+      end
+    end
+
     describe "calculating price with adjustments" do
       it "does not return fractional cents" do
         li = LineItem.new
@@ -87,6 +122,15 @@ module Spree
 
         it "returns 0.00 otherwise" do
           expect(li_no_tax.included_tax).to eq 0.00
+        end
+      end
+
+      context "scaling included tax by quantity" do
+        it "multiplies included_tax" do
+          li_tax.quantity = 3
+          li_tax.save
+          expect(li_tax.included_tax).to eq 10.00
+          expect(li_tax.included_tax_amount).to eq 30.00
         end
       end
     end
