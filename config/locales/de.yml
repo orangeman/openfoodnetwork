@@ -19,131 +19,130 @@ de:
     # Overridden here due to a bug in spree i18n (Issue #870)
     attributes:
       spree/order:
-        payment_state: Payment State
-        shipment_state: Shipment State
+        payment_state: Zahlung
+        shipment_state: Versand
   devise:
     failure:
       invalid: |
         EMail oder Passwort ungültig.
-        Were you a guest last time?  Perhaps you need to create an account or reset your password.
     enterprise_confirmations:
       enterprise:
-        confirmed: Thankyou, your email address has been confirmed.
-        not_confirmed: Your email address could not be confirmed. Perhaps you have already completed this step?
-        confirmation_sent: "Confirmation email sent!"
-        confirmation_not_sent: "Could not send a confirmation email."
+        confirmed: Danke!, Deine Email Adresse wurde bestätigt.
+        not_confirmed: Email konnte nicht bestätigt werden.
+        confirmation_sent: "Email Verifikation wurde versandt!"
+        confirmation_not_sent: "Email Verifikation konnte nicht versendet werden."
   enterprise_mailer:
     confirmation_instructions:
-      subject: "Please confirm the email address for %{enterprise}"
+      subject: "Bitte bestätige die Email Adresse für %{enterprise}"
     welcome:
-      subject: "%{enterprise} is now on %{sitename}"
+      subject: "%{enterprise} ist auf %{sitename}"
   home: "OFN"
   title: Open Food Network
-  welcome_to: 'Welcome to '
-  site_meta_description: "We begin from the ground up. With farmers and growers ready to tell their stories proudly and truly. With distributors ready to connect people with products fairly and honestly. With buyers who believe that better weekly shopping decisions can…"
-  search_by_name: Search by name or suburb...
+  welcome_to: 'Willkommen zum '
+  site_meta_description: "Wir beginnen bei der Basis. With farmers and growers ready to tell their stories proudly and truly. With distributors ready to connect people with products fairly and honestly. With buyers who believe that better weekly shopping decisions can…"
+  search_by_name: Suche nach Namen oder Orten...
   producers: 'Australian Producers'
   producers_join: Australian producers are now welcome to join the Open Food Network. #FIXME
-  charges_sales_tax: Charges GST?
-  print_invoice: "Print Invoice"
-  send_invoice: "Send Invoice"
-  resend_confirmation: "Resend Confirmation"
-  view_order: "View Order"
-  edit_order: "Edit Order"
-  ship_order: "Ship Order"
-  cancel_order: "Cancel Order"
-  confirm_send_invoice: "An invoice for this order will be sent to the customer. Are you sure you want to continue?"
-  confirm_resend_order_confirmation: "Are you sure you want to resend the order confirmation email?"
-  must_have_valid_business_number: "%{enterprise_name} must have a valid ABN before invoices can be sent."
-  invoice: "Invoice"
+  charges_sales_tax: USt?
+  print_invoice: "Rechnung drucken"
+  send_invoice: "Rechnung senden"
+  resend_confirmation: "Bestätigung erneut senden"
+  view_order: "Bestellung Ansehen"
+  edit_order: "Bestellung Editieren"
+  ship_order: "Versandfertig machen"
+  cancel_order: "Bestellung stornieren"
+  confirm_send_invoice: "Rechnung wird versandt. Ok?"
+  confirm_resend_order_confirmation: "Bestätigungs Email wirklich erneut senden?"
+  must_have_valid_business_number: "%{enterprise_name} braucht gültige ABN um Rechnungen zu versenden."
+  invoice: "Rechnung"
   percentage_of_sales: "%{percentage} of sales"
   percentage_of_turnover: "Percentage of turnover"
   monthly_cap_excl_tax: "monthly cap (excl. GST)"
   capped_at_cap: "capped at %{cap}"
-  per_month: "per month"
-  free: "free"
-  plus_tax: "plus GST"
-  total_monthly_bill_incl_tax: "Total Monthly Bill (Incl. Tax)"
-  say_no: "No"
-  say_yes: "Yes"
+  per_month: "pro Monat"
+  free: "gratis"
+  plus_tax: "zzgl. USt"
+  total_monthly_bill_incl_tax: "Monatliche Rechnung (Inkl. USt)"
+  say_no: "Nein"
+  say_yes: "Ja"
 
-  sort_order_cycles_on_shopfront_by: "Sort Order Cycles On Shopfront By"
+  sort_order_cycles_on_shopfront_by: "Bestell Runden im Shop sortieren nach"
 
 
   admin:
     # Common properties / models
-    date: Date
+    date: Datum
     email: Email
     name: Name
-    on_hand: On Hand
-    on_demand: On Demand
-    on_demand?: On Demand?
-    order_cycle: Order Cycle
-    phone: Phone
-    price: Price
-    producer: Producer
-    product: Product
-    quantity: Quantity
+    on_hand: auf Lager
+    on_demand: auf Nachfrage
+    on_demand?: auf Nachfeage?
+    order_cycle: Bestell Runde
+    phone: Telefon
+    price: Preis
+    producer: Erzeuger
+    product: Produkt
+    quantity: Menge
     shop: Shop
     sku: SKU
     tags: Tags
-    variant: Variant
+    variant: Variante
 
     # General form elements
-    quick_search: Quick Search
-    clear_all: Clear All
-    start_date: "Start Date"
-    end_date: "End Date"
+    quick_search: Schnell Suche
+    clear_all: Alles löschen
+    start_date: "Start Datum"
+    end_date: "End Datum"
 
-    columns: Columns
-    actions: Actions
+    columns: Spalten
+    actions: Aktionen
     viewing: "Viewing: %{current_view_name}"
 
-    whats_this: What's this?
+    whats_this: Was das?
 
-    tag_has_rules: "Existing rules for this tag: %{num}"
-    has_one_rule: "has one rule"
-    has_n_rules: "has %{num} rules"
+    tag_has_rules: "Regeln für Tag: %{num}"
+    has_one_rule: "hat eine Regel"
+    has_n_rules: "hat %{num} Regeln"
 
     customers:
       index:
-        add_customer: "Add Customer"
-        new_customer: "New Customer"
-        customer_placeholder: "customer@example.org"
-        valid_email_error: Please enter a valid email address
-        add_a_new_customer_for: Add a new customer for %{shop_name}
+        add_customer: "Kunden hinzufügen"
+        new_customer: "Neuer Kunde"
+        customer_placeholder: "xaver@fairteil.de"
+        valid_email_error: Bitte eine gültige Email Adresse
+        add_a_new_customer_for: Neuer Kunde für %{shop_name} hinzufügen
         code: Code
 
     products:
       bulk_edit:
-        unit: Unit
-        display_as: Display As
-        category: Category
-        tax_category: Tax Category
-        inherits_properties?: Inherits Properties?
-        available_on: Available On
-        av_on: "Av. On"
+        unit: Einheit
+        display_as: anzeigen als
+        category: Kategorie
+        tax_category: Steuer
+        inherits_properties?: erbt Eigenschaften?
+        available_on: verfügbar ab
+        av_on: "durchschnittlich am"
 
     variant_overrides:
       index:
-        title: Inventory
-        description: Use this page to manage inventories for your enterprises. Any product details set here will override those set on the 'Products' page
-        enable_reset?: Enable Stock Reset?
-        inherit?: Inherit?
-        add: Add
-        hide: Hide
-        select_a_shop: Select A Shop
-        review_now: Review Now
-        new_products_alert_message: There are %{new_product_count} new products available to add to your inventory.
-        currently_empty: Your inventory is currently empty
-        no_matching_products: No matching products found in your inventory
-        no_hidden_products: No products have been hidden from this inventory
-        no_matching_hidden_products: No hidden products match your search criteria
-        no_new_products: No new products are available to add to this inventory
-        no_matching_new_products: No new products match your search criteria
-        inventory_powertip: This is your inventory of products. To add products to your inventory, select 'New Products' from the Viewing dropdown.
-        hidden_powertip: These products have been hidden from your inventory and will not be available to add to your shop. You can click 'Add' to add a product to you inventory.
-        new_powertip: These products are available to be added to your inventory. Click 'Add' to add a product to your inventory, or 'Hide' to hide it from view. You can always change your mind later!
+        title: Lagerbestand
+        description: Produktsortiment pflegen. Änderungen hier überschreiben die Produkt Details
+        enable_reset?: Lagerbestand Zurücksetzen Funktion Aktivieren?
+        inherit?: Erben?
+        add: Hinzufügen
+        hide: Ausblenden
+        select_a_shop: Wähle Shop
+        review_now: Ansehen
+        new_products_alert_message: Es sind %{new_product_count} neue Produkte verfügbar, die zum Sortiment hinzugefügt werden können.
+        currently_empty: Produktsortiment leer
+        no_matching_products: Keine Treffer gefunden im Sortiment
+        no_hidden_products: Keine Produkte ausgeblendet im Sortiment
+        no_matching_hidden_products: Keine Treffer unter den ausgeblendeten Produkten
+        no_new_products: Keine neuen Produkte verfügbar, die zum Sortiment hinzugefügt werden können
+        no_matching_new_products: Keine Treffer unter den neuen Produkten
+        inventory_powertip: Um Produkte ins Sortiment zu nehmen wähle 'Neues Produkt' vom Dropdown Menü.
+        hidden_powertip: Diese Produkte sind ausgeblendet und nicht verfügbar im Shop. Klicke 'Hinzufügen' um ein Produkt wieder ins Sortiment zu nehmen.
+        new_powertip: Diese Produkte sind verfügbar, ins Sortiment genommen zu werden. Klicke 'Hinzufügen' um ein Produkt ins Sortiment zu nehmen oder 'Ausblenden'.
 
     orders:
       bulk_management:
